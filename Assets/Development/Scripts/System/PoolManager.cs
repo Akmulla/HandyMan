@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    public Pool trashPool { get; set; }
+    public Pool applePool;
 }

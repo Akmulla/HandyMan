@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -14,10 +15,10 @@ TagManager:
   - 
   - 
   - HandFree
-  - ImpassableForHand
-  - PassableWhenGrabbed
   - HandGrabbed
-  - 
+  - Trash
+  - TrashGrabbed
+  - Interactable
   - 
   - 
   - 
@@ -40,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Trash
+    uniqueID: 1080314895
+    locked: 0
+  - name: Hand
+    uniqueID: 666350871
     locked: 0

@@ -62,14 +62,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Development\Scripts\Enums.cs" />
     <Compile Include="Assets\Development\Scripts\Hand\Hand.cs" />
     <Compile Include="Assets\Development\Scripts\Hand\HandGrab.cs" />
     <Compile Include="Assets\Development\Scripts\Hand\HandMovement.cs" />
+    <Compile Include="Assets\Development\Scripts\Monster\Monster.cs" />
+    <Compile Include="Assets\Development\Scripts\MonsterSpawner.cs" />
+    <Compile Include="Assets\Development\Scripts\Portal.cs" />
+    <Compile Include="Assets\Development\Scripts\System\IInteractable.cs" />
     <Compile Include="Assets\Development\Scripts\System\Pool.cs" />
     <Compile Include="Assets\Development\Scripts\System\PoolManager.cs" />
     <Compile Include="Assets\Development\Scripts\System\PoolRef.cs" />
     <Compile Include="Assets\Development\Scripts\System\Toolbox.cs" />
     <Compile Include="Assets\Development\Scripts\Trash\TrashObj.cs" />
+    <Compile Include="Assets\Development\Scripts\TrashSpawner.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/d4n73/UnityProj/HandyMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

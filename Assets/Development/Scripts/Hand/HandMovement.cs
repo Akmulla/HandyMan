@@ -10,6 +10,7 @@ public class HandMovement : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
