@@ -8,14 +8,17 @@ public class Monster : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] float timeBeforeAngry;
     [SerializeField] float timeBetweenNotifications;
-    bool angry;
+    [SerializeField] GameObject popUpIcon;
+    public bool angry { get; set; }
     bool fed;
 
     void OnEnable()
     {
         fed = false;
+        popUpIcon.SetActive(false);
         StopAllCoroutines();
-        //StartCoroutine(AskingCor());
+        StartCoroutine(AskingCor());
+        StartCoroutine(PopUpCor());
     }
 
     IEnumerator AskingCor()
@@ -29,11 +32,24 @@ public class Monster : MonoBehaviour
                 if (Time.time - startTime > timeBeforeAngry)
                 {
                     angry = true;
+                    anim.SetBool("Angry", true);
                 }
             }
             yield return null;
         }
 
+        yield return null;
+    }
+
+    IEnumerator PopUpCor()
+    {
+        while (!fed)
+        {
+            popUpIcon.SetActive(false);
+            yield return new WaitForSeconds(timeBetweenNotifications);
+            popUpIcon.SetActive(true);
+            yield return new WaitForSeconds(timeBetweenNotifications);
+        }
         yield return null;
     }
 

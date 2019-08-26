@@ -32,6 +32,5 @@ public class Portal : MonoBehaviour
             activeMonster.SetActive(false);
         }
         activeMonster = null;
-
     }
 }

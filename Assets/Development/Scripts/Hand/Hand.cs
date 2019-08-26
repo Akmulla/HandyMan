@@ -6,14 +6,14 @@ public class Hand : MonoBehaviour
 {
     [SerializeField] int baseHp;
     [SerializeField] float shieldDuration;
-    Animator anim;
+    [SerializeField]Animator anim;
     int hp;
 
     bool shield;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         hp = baseHp;
         shield = false;
     }
