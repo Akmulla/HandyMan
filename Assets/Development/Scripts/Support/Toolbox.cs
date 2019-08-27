@@ -9,6 +9,7 @@ public class Toolbox : MonoBehaviour
     public Transform grabPoint;
     public PoolManager poolManager;
     public Transform handTransform;
+    public Hand hand;
 
     void Awake()
     {

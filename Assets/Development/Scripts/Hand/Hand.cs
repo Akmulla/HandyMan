@@ -1,20 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hand : MonoBehaviour
 {
     [SerializeField] int baseHp;
+    [SerializeField] int maxHp;
     [SerializeField] float shieldDuration;
     [SerializeField]Animator anim;
+    [SerializeField] Image hpBar;
+
     int hp;
+    int Hp
+    {
+        get
+        {
+            return hp;
+        }
+        set
+        {
+            hp = value;
+            hp = Mathf.Clamp(Hp, 0, maxHp);
+
+            if (hp <= 0)
+            {
+                Die();
+            }
+
+            hpBar.fillAmount = (float)hp / (float)maxHp;
+        }
+    }
 
     bool shield;
 
     void Start()
     {
         //anim = GetComponent<Animator>();
-        hp = baseHp;
+        Hp = baseHp;
         shield = false;
     }
 
@@ -23,16 +46,18 @@ public class Hand : MonoBehaviour
         if (shield)
             return;
 
-        hp -= amount;
-        if (hp<=0)
-        {
-            Die();
-        }
-        else
+        Hp -= amount;
+        
+        if (Hp>0)
         {
             anim.SetTrigger("Damage");
             StartCoroutine(GetShield());
         }
+    }
+
+    public void Heal(int amount)
+    {
+        Hp += amount;
     }
 
     void Die()

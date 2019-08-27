@@ -12,7 +12,7 @@ public class HandGrab : MonoBehaviour
     [SerializeField] LayerMask interactionMask;
     HandState handState;
     Rigidbody2D rb;
-    TrashObj grabbedObj;
+    IGrabbable grabbedObj;
     Animator anim;
 
 
@@ -70,12 +70,12 @@ public class HandGrab : MonoBehaviour
             return;
         }
 
-        TrashObj obj = null;
+        IGrabbable obj = null;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(grabPosition.position, grabRadius, grabMask);
 
         if (colliders.Length > 0)
         {
-            obj = colliders[0].GetComponent<TrashObj>();
+            obj = colliders[0].GetComponent<IGrabbable>();
 
             float min = (grabPosition.position - colliders[0].transform.position).magnitude;
 
@@ -85,7 +85,7 @@ public class HandGrab : MonoBehaviour
                 if (d < min)
                 {
                     min = d;
-                    obj = colliders[i].GetComponent<TrashObj>();
+                    obj = colliders[i].GetComponent<IGrabbable>();
                 }
             }
         }
@@ -111,7 +111,8 @@ public class HandGrab : MonoBehaviour
             {
                 vel = vel.normalized * 15f;
             }
-            grabbedObj.GetComponent<Rigidbody2D>().AddForce(vel, ForceMode2D.Impulse);
+            var grabbedMono = grabbedObj as MonoBehaviour;
+            grabbedMono.gameObject.GetComponent<Rigidbody2D>().AddForce(vel, ForceMode2D.Impulse);
         }
     }
 }
