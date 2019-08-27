@@ -8,10 +8,10 @@ public class Hand : MonoBehaviour
     [SerializeField] int baseHp;
     [SerializeField] int maxHp;
     [SerializeField] float shieldDuration;
-    [SerializeField]Animator anim;
+    [SerializeField] Animator anim;
     [SerializeField] Image hpBar;
 
-    int hp;
+    public int hp;
     int Hp
     {
         get

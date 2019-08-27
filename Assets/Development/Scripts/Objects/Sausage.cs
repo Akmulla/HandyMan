@@ -11,6 +11,7 @@ public class Sausage : MonoBehaviour , IGrabbable
     [SerializeField] RigidbodyConstraints2D grabbedConstraints;
     [SerializeField] TrashType trashType;
     [SerializeField] Animator anim;
+    [SerializeField] Animator faceAnim;
     [SerializeField] int startResource;
     int resource;
     float spinPower;
@@ -48,6 +49,7 @@ public class Sausage : MonoBehaviour , IGrabbable
         rb.constraints = grabbedConstraints;
         grabbed = true;
         rb.gravityScale = 0f;
+        faceAnim.SetBool("Grab", true);
         //anim.speed = 1f;
     }
 
@@ -60,6 +62,7 @@ public class Sausage : MonoBehaviour , IGrabbable
         SpinPower = 0f;
         anim.speed = 0f;
         prevVel = Vector2.zero;
+        faceAnim.SetBool("Grab", false);
     }
 
     public void Heal()
@@ -71,6 +74,7 @@ public class Sausage : MonoBehaviour , IGrabbable
         }
         else
         {
+            faceAnim.SetBool("Dead", true);
             if (grabbed)
             {
                 Release();

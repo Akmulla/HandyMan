@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Preset
+{
+    public Pool[] pools;
+}
+
 public class TrashSpawner : MonoBehaviour, IInteractable
 {
     [SerializeField] Transform spawnPoint;
@@ -10,8 +16,9 @@ public class TrashSpawner : MonoBehaviour, IInteractable
     [SerializeField] Vector2 startImpulseDirection;
     [SerializeField] float startImpulsePower;
     [SerializeField] SpriteRenderer spriteRend;
-    //Pool[] foodPools;
-    bool spawning;
+    [SerializeField] Preset[] presets;
+    public bool spawning;
+    public int activePreset;
 
     void Start()
     {
@@ -36,7 +43,8 @@ public class TrashSpawner : MonoBehaviour, IInteractable
 
     void Spawn()
     {
-        Pool pool = Toolbox.Instance.poolManager.foodPools[Random.Range(0, Toolbox.Instance.poolManager.foodPools.Length)];
+        // Pool pool = Toolbox.Instance.poolManager.foodPools[Random.Range(0, Toolbox.Instance.poolManager.foodPools.Length)];
+        Pool pool = presets[activePreset].pools[Random.Range(0, presets[activePreset].pools.Length)];
         GameObject obj = pool.Activate(spawnPoint.position, spawnPoint.rotation);
         obj.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         obj.GetComponent<Rigidbody2D>().AddForce(startImpulseDirection.normalized * startImpulsePower, ForceMode2D.Impulse);

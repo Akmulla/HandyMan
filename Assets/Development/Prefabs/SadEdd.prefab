@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 28266937}
   - component: {fileID: 28266938}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PopUpIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +81,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &32961878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 32961879}
+  m_Layer: 14
+  m_Name: shotSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &32961879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32961878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1333472452956256394}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1139473630
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +122,7 @@ GameObject:
   - component: {fileID: 1139473631}
   - component: {fileID: 1139473632}
   - component: {fileID: 1139473633}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +180,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2e229f2abd0c94a4490b5ca35dc017f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -192,7 +222,8 @@ GameObject:
   - component: {fileID: 1333472452956256394}
   - component: {fileID: 959300276}
   - component: {fileID: 959300277}
-  m_Layer: 0
+  - component: {fileID: 1135545039}
+  m_Layer: 14
   m_Name: SadEdd
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -208,10 +239,11 @@ Transform:
   m_GameObject: {fileID: 1333472452956256397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.67, y: 0.80999994, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1333472454212760473}
   - {fileID: 28266937}
+  - {fileID: 32961879}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -258,6 +290,25 @@ MonoBehaviour:
   timeBeforeAngry: 5
   timeBetweenNotifications: 3
   popUpIcon: {fileID: 28266936}
+--- !u!114 &1135545039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333472452956256397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2edcd1f9df342b45a778cd3bad607f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotSpawn: {fileID: 32961879}
+  monster: {fileID: 959300277}
+  normalBulletPool: {fileID: 0}
+  angryBulletPool: {fileID: 0}
+  startDelay: 1
+  cdNormal: 4
+  cdAngry: 2
 --- !u!1 &1333472453019573803
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333472453019573800}
   - component: {fileID: 1333472453019573801}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333472453490706596}
   - component: {fileID: 1333472453490706597}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333472453613460196}
   - component: {fileID: 1333472453613460197}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333472454129986081}
   - component: {fileID: 1333472454129986078}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333472454212760473}
   - component: {fileID: 1333472454212760470}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333472454504352574}
   - component: {fileID: 1333472454504352575}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1333472454783790960}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333472454898421786}
   - component: {fileID: 1333472454898421787}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333472454950482104}
   - component: {fileID: 1333472454950482105}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

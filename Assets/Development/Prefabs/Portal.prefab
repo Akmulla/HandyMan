@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPos: {fileID: 1479379718547250545}
+  anim: {fileID: 1701201457}
 --- !u!95 &1701201457
 Animator:
   serializedVersion: 3

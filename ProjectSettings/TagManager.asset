@@ -21,9 +21,9 @@ TagManager:
   - TrashGrabbed
   - Interactable
   - Wall
-  - 
-  - 
-  - 
+  - Monster
+  - Bullet
+  - Floor
   - 
   - 
   - 
@@ -48,4 +48,7 @@ TagManager:
     locked: 0
   - name: Hand
     uniqueID: 666350871
+    locked: 0
+  - name: Monster
+    uniqueID: 2025197447
     locked: 0

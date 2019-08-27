@@ -14,6 +14,7 @@ public class Monster : MonoBehaviour
 
     void OnEnable()
     {
+        angry = false;
         fed = false;
         popUpIcon.SetActive(false);
         StopAllCoroutines();
@@ -81,7 +82,8 @@ public class Monster : MonoBehaviour
 
     void CorrectFoodReaction()
     {
-
+        Toolbox.Instance.progressBar.AddProgress(10);
+        gameObject.SetActive(false);
     }
 
     void WrongFoodReaction()

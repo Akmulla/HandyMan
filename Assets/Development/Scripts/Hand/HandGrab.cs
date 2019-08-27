@@ -111,6 +111,7 @@ public class HandGrab : MonoBehaviour
             {
                 vel = vel.normalized * 15f;
             }
+
             var grabbedMono = grabbedObj as MonoBehaviour;
             grabbedMono.gameObject.GetComponent<Rigidbody2D>().AddForce(vel, ForceMode2D.Impulse);
         }

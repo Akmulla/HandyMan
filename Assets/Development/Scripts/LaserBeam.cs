@@ -91,11 +91,11 @@ public class LaserBeam : MonoBehaviour
             i++;
         }
         //If we're not hitting anything, don't play the particle effects
-        if (endEffect)
-        {
-            if (endEffect.isPlaying)
-                endEffect.Stop();
-        }
+        //if (endEffect)
+        //{
+        //    if (endEffect.isPlaying)
+        //        endEffect.Stop();
+        //}
         length = (int)maxLength;
         position = new Vector3[length];
         lineRenderer.SetVertexCount(length);

@@ -8,26 +8,26 @@ public class MonsterSpawner : MonoBehaviour
     [SerializeField] Monster[] monsters;
     [SerializeField] float timeBetweenSpawns;
     [SerializeField] float startDelay;
-
-
-    void Start()
+    //public bool spawning;
+    
+    void OnEnable()
     {
-        //StartCoroutine(SpawnCor());
+        StopAllCoroutines();
+        StartCoroutine(SpawnCor());
     }
 
-    void Update()
-    {
-        
-    }
 
     IEnumerator SpawnCor()
     {
-        while (Time.time<20f)
+        while (true)
         {
-            SpawnPortal();
-            yield return new WaitForSeconds(timeBetweenSpawns);
+            //if (spawning)
+            {
+                SpawnPortal();
+                yield return new WaitForSeconds(timeBetweenSpawns);
+            }
+            yield return null;
         }
-        yield return null;
     }
 
     void SpawnPortal()
