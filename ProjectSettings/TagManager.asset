@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Monster
   - Walls
+  - Bullet
+  - Head
   layers:
   - Default
   - TransparentFX
@@ -24,8 +26,8 @@ TagManager:
   - Monster
   - Bullet
   - Floor
-  - 
-  - 
+  - HeadFree
+  - HeadGrabbable
   - 
   - 
   - 

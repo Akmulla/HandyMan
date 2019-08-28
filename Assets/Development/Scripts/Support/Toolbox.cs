@@ -12,6 +12,7 @@ public class Toolbox : MonoBehaviour
     public Transform handTransform;
     public Hand hand;
     public Progress progressBar;
+    public Head head;
 
     void Awake()
     {

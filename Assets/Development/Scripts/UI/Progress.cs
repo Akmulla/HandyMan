@@ -8,7 +8,7 @@ public class Progress : MonoBehaviour
     [SerializeField] Image progressBar;
     [SerializeField] int progressToFinish;
     public bool finished;
-    int currentProgress;
+    public int currentProgress;
 
     void OnEnable()
     {

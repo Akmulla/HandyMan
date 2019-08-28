@@ -6,11 +6,13 @@ public class Monster : MonoBehaviour
 {
     [SerializeField] List<TrashType> trashTypes;
     [SerializeField] Animator anim;
+    [SerializeField] Animator appearAnim;
     [SerializeField] float timeBeforeAngry;
     [SerializeField] float timeBetweenNotifications;
     [SerializeField] GameObject popUpIcon;
     public bool angry { get; set; }
     bool fed;
+   
 
     void OnEnable()
     {
@@ -80,14 +82,21 @@ public class Monster : MonoBehaviour
         }
     }
 
+    public void Deactivate()
+    {
+        gameObject.SetActive(false);
+    }
+
     void CorrectFoodReaction()
     {
         Toolbox.Instance.progressBar.AddProgress(10);
-        gameObject.SetActive(false);
+        StopAllCoroutines();
+        appearAnim.SetBool("Finish", true);
+        //gameObject.SetActive(false);
     }
 
     void WrongFoodReaction()
     {
-
+        
     }
 }

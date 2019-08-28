@@ -39,7 +39,21 @@ public class MonsterSpawner : MonoBehaviour
         {
             if (!portals[i].gameObject.activeSelf)
             {
-                availPortals.Add(portals[i]);
+                if (i<3)
+                {
+                    if (!portals[i+3].gameObject.activeSelf)
+                    {
+                        availPortals.Add(portals[i]);
+                    }
+                }
+                else
+                {
+                    if (!portals[i - 3].gameObject.activeSelf)
+                    {
+                        availPortals.Add(portals[i]);
+                    }
+                }
+                
             }
         }
 
