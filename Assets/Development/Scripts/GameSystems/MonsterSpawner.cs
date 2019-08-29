@@ -8,14 +8,12 @@ public class MonsterSpawner : MonoBehaviour
     [SerializeField] Monster[] monsters;
     [SerializeField] float timeBetweenSpawns;
     [SerializeField] float startDelay;
-    //public bool spawning;
     
     void OnEnable()
     {
         StopAllCoroutines();
         StartCoroutine(SpawnCor());
     }
-
 
     IEnumerator SpawnCor()
     {

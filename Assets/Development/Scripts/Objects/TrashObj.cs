@@ -44,6 +44,7 @@ public class TrashObj : MonoBehaviour, IGrabbable
         if (grabbed)
         {
             rb.position = Toolbox.Instance.grabPoint.position;
+            //rb.AddForce(-rb.position + (Vector2)Toolbox.Instance.grabPoint.position);
         }
         else
         {

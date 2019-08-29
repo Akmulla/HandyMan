@@ -42,15 +42,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1329037003
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Trash
     uniqueID: 1080314895
     locked: 0
-  - name: Hand
-    uniqueID: 666350871
-    locked: 0
   - name: Monster
     uniqueID: 2025197447
+    locked: 0
+  - name: Hand
+    uniqueID: 666350871
     locked: 0

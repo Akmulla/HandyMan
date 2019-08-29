@@ -7,9 +7,12 @@ public class Hand : MonoBehaviour
 {
     [SerializeField] int baseHp;
     [SerializeField] int maxHp;
-    [SerializeField] float shieldDuration;
+   // [SerializeField] float shieldDuration;
     [SerializeField] Animator anim;
     [SerializeField] Image hpBar;
+    [SerializeField] SpriteRenderer rend;
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip damageSound;
 
     public int hp;
     int Hp
@@ -36,7 +39,6 @@ public class Hand : MonoBehaviour
 
     void Start()
     {
-        //anim = GetComponent<Animator>();
         Hp = baseHp;
         shield = false;
     }
@@ -51,6 +53,7 @@ public class Hand : MonoBehaviour
         if (Hp>0)
         {
             anim.SetTrigger("Damage");
+            source.PlayOneShot(damageSound);
             StartCoroutine(GetShield());
         }
     }
@@ -62,13 +65,21 @@ public class Hand : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        Toolbox.Instance.gameController.GameOver();
     }
 
     IEnumerator GetShield()
     {
         shield = true;
-        yield return new WaitForSeconds(shieldDuration);
+        for (int i=0;i<5;i++)
+        {
+            rend.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            rend.color = Color.white;
+            yield return new WaitForSeconds(0.2f);
+        }
+        //yield return new WaitForSeconds(shieldDuration);
         shield = false;
     }
 }

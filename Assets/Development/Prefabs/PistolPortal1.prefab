@@ -151,10 +151,10 @@ SpriteMask:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 26a0286227c737b4bba7282358a2a8b8, type: 3}
   m_MaskAlphaCutoff: 1
-  m_FrontSortingLayerID: 0
-  m_BackSortingLayerID: 0
-  m_FrontSortingLayer: 0
-  m_BackSortingLayer: 0
+  m_FrontSortingLayerID: 2025197447
+  m_BackSortingLayerID: 2025197447
+  m_FrontSortingLayer: 2
+  m_BackSortingLayer: 2
   m_FrontSortingOrder: 5
   m_BackSortingOrder: -5
   m_IsCustomRangeActive: 1
@@ -183,13 +183,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6251883218319587052}
-  m_LocalRotation: {x: -0.0000018691642, y: 0.0000014211981, z: 0.38008752, w: 0.9249505}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9109572433343799372}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 3.2040002, y: 1.8520001, z: -105.27}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!212 &6251883218319587054
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -225,15 +225,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2025197447
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7844d3481a2f31a4090324d1e0fd3c0e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a9469411f2042654b9a76561eb6c2185, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.4, y: 13.21}
+  m_Size: {x: 6, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -262,8 +262,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6251883218588204831}
-  m_LocalRotation: {x: -0.0000018700955, y: 0.0000014174728, z: 0.38008752, w: 0.9249505}
-  m_LocalPosition: {x: -1.7287292, y: -0.59841204, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.54, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9109572433343799372}
@@ -337,6 +337,7 @@ MonoBehaviour:
   anim: {fileID: 6251883218834749848}
   bulletPool: {fileID: 0}
   shotSpawn: {fileID: 6251883218588204824}
+  pistol: {fileID: 9109572433343799372}
   spawnCd: 3
   startDelay: 1
 --- !u!1 &6251883218851778174
@@ -506,12 +507,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8436601083097789777}
-  m_LocalRotation: {x: -0.008355452, y: 0.031182962, z: -0.9654224, w: 0.2586842}
-  m_LocalPosition: {x: -0.71000046, y: -2.5600004, z: -0.11999999}
+  m_LocalRotation: {x: 0.031933095, y: -0.004755437, z: 0.6217682, w: 0.7825357}
+  m_LocalPosition: {x: 0.1, y: -4.01, z: -0.11}
   m_LocalScale: {x: 1.0000005, y: 1.0000004, z: 1}
   m_Children:
   - {fileID: 6251883218588204824}
   - {fileID: 6251883218319587053}
   m_Father: {fileID: 6251883218834749854}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.2040002, y: 1.8520001, z: 76.99}

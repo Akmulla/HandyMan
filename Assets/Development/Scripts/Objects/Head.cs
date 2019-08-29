@@ -27,7 +27,8 @@ public class Head : MonoBehaviour, IGrabbable
 
     public void Grab()
     {
-        gameObject.layer = LayerMask.NameToLayer("TrashGrabbed");
+        //gameObject.layer = LayerMask.NameToLayer("TrashGrabbed");
+        //gameObject.layer = LayerMask.NameToLayer("TrashGrabbed");
         rb.constraints = grabbedConstraints;
         grabbed = true;
         rb.gravityScale = 0f;
@@ -35,7 +36,8 @@ public class Head : MonoBehaviour, IGrabbable
 
     public void Release()
     {
-        gameObject.layer = LayerMask.NameToLayer("Trash");
+        //gameObject.layer = LayerMask.NameToLayer("Trash");
+        //gameObject.layer = LayerMask.NameToLayer("Trash");
         rb.constraints = freeConstraints;
         grabbed = false;
         rb.gravityScale = baseGravityScale;
@@ -80,6 +82,7 @@ public class Head : MonoBehaviour, IGrabbable
             {
                 rb.position = Toolbox.Instance.grabPoint.position;
             }
+           
         }
     }
 }

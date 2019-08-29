@@ -20,13 +20,12 @@ public class Portal : MonoBehaviour
         {
             if (!activeMonster.activeSelf)
             {
-                //gameObject.SetActive(false);
-                anim.SetBool("Close", true);
+                gameObject.SetActive(false);
             }
         }
     }
 
-    void OnEnabled()
+    void OnDisable()
     {
         activeMonster = null;
     }
@@ -36,17 +35,10 @@ public class Portal : MonoBehaviour
         monsterObj.transform.position = spawnPos.position;
         monsterObj.SetActive(true);
         activeMonster = monsterObj;
-        //StartCoroutine(SpawnCor(monsterObj));
     }
 
-    IEnumerator SpawnCor(GameObject monsterObj)
-    {
-        yield return new WaitForSeconds(0.5f);
-        
-    }
-
-    public void Close()
-    {
-        gameObject.SetActive(false);
-    }
+    //public void Close()
+    //{
+    //    gameObject.SetActive(false);
+    //}
 }

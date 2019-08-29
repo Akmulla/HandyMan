@@ -62,8 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Convayer.cs" />
     <Compile Include="Assets\Development\Scripts\Brick.cs" />
     <Compile Include="Assets\Development\Scripts\BrickPortal.cs" />
+    <Compile Include="Assets\Development\Scripts\GameSystems\GameController.cs" />
     <Compile Include="Assets\Development\Scripts\GameSystems\MonsterSpawner.cs" />
     <Compile Include="Assets\Development\Scripts\GameSystems\PoolManager.cs" />
     <Compile Include="Assets\Development\Scripts\GameSystems\TrashSpawner.cs" />
@@ -72,12 +74,17 @@
     <Compile Include="Assets\Development\Scripts\Hand\HandMovement.cs" />
     <Compile Include="Assets\Development\Scripts\HeadPortal.cs" />
     <Compile Include="Assets\Development\Scripts\LaserBeam.cs" />
+    <Compile Include="Assets\Development\Scripts\LaserTrap.cs" />
+    <Compile Include="Assets\Development\Scripts\Monster\Green\GreenAttack.cs" />
+    <Compile Include="Assets\Development\Scripts\Monster\Green\GreenNormalBullet.cs" />
     <Compile Include="Assets\Development\Scripts\Monster\IMonsterAttack.cs" />
     <Compile Include="Assets\Development\Scripts\Monster\Monster.cs" />
     <Compile Include="Assets\Development\Scripts\Monster\Pink\Bullet.cs" />
+    <Compile Include="Assets\Development\Scripts\Monster\Pink\EddAngryBullet.cs" />
     <Compile Include="Assets\Development\Scripts\Monster\Pink\EddAttack.cs" />
     <Compile Include="Assets\Development\Scripts\Monster\Purple\PurpleAngryBullet.cs" />
     <Compile Include="Assets\Development\Scripts\Monster\Purple\PurpleAttack.cs" />
+    <Compile Include="Assets\Development\Scripts\Monster\Red\RedAttack.cs" />
     <Compile Include="Assets\Development\Scripts\Monster\Yellow\YellowAttack.cs" />
     <Compile Include="Assets\Development\Scripts\Monster\Yellow\YellowBullet.cs" />
     <Compile Include="Assets\Development\Scripts\Objects\Enums.cs" />
@@ -87,6 +94,7 @@
     <Compile Include="Assets\Development\Scripts\Objects\TrashObj.cs" />
     <Compile Include="Assets\Development\Scripts\Pistol.cs" />
     <Compile Include="Assets\Development\Scripts\Portal.cs" />
+    <Compile Include="Assets\Development\Scripts\Scroller.cs" />
     <Compile Include="Assets\Development\Scripts\Support\Edges.cs" />
     <Compile Include="Assets\Development\Scripts\Support\IInteractable.cs" />
     <Compile Include="Assets\Development\Scripts\Support\MathfFunc.cs" />

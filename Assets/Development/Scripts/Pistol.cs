@@ -14,20 +14,26 @@ public class Pistol : MonoBehaviour
     void OnEnable()
     {
         StopAllCoroutines();
-        //StartAttack();
+        StartAttack();
     }
 
     IEnumerator AttackCor()
     {
         yield return new WaitForSeconds(startDelay);
+        float lastAttackTime = Time.time;
         while (true)
         {
             MathfFunc.RotateToPoint(Toolbox.Instance.head.transform.position, pistol);
-
-            //MathfFunc.RotateToPoint(Toolbox.Instance.handTransform.position, pistol);
-            //yield return null;
-            var obj = bulletPool.Activate(shotSpawn.position, shotSpawn.rotation);
-            yield return new WaitForSeconds(spawnCd);
+            if (Time.time > lastAttackTime+spawnCd)
+            {
+                var obj = bulletPool.Activate(shotSpawn.position, shotSpawn.rotation);
+                yield return new WaitForSeconds(spawnCd);
+            }
+            else
+            {
+                yield return null;
+            }
+            
         }
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4568989253614213558}
   - component: {fileID: 421969670077280893}
   - component: {fileID: 7227860301454317686}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -59,7 +59,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.15, y: 0.68}
+  m_Size: {x: 0.96, y: 0.62}
   m_EdgeRadius: 0
 --- !u!50 &4568989253614213558
 Rigidbody2D:
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4769706362323832932}
   - component: {fileID: 4769706362323832933}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,10 +173,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 666350871
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 057a83b873023274f885ebf9baf2fc3c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0839604d447b6ea40a4234206b4053ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

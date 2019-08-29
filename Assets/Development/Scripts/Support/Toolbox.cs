@@ -13,6 +13,7 @@ public class Toolbox : MonoBehaviour
     public Hand hand;
     public Progress progressBar;
     public Head head;
+    public GameController gameController;
 
     void Awake()
     {

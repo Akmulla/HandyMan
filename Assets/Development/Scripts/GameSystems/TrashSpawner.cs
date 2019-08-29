@@ -10,6 +10,7 @@ public class Preset
 
 public class TrashSpawner : MonoBehaviour, IInteractable
 {
+    [SerializeField] Animator anim;
     [SerializeField] Transform spawnPoint;
     [SerializeField] float spawnDuration;
     [SerializeField] float spawnDelay;
@@ -17,6 +18,7 @@ public class TrashSpawner : MonoBehaviour, IInteractable
     [SerializeField] float startImpulsePower;
     [SerializeField] SpriteRenderer spriteRend;
     [SerializeField] Preset[] presets;
+    [SerializeField] Convayer conv;
     public bool spawning;
     public int activePreset;
 
@@ -27,9 +29,9 @@ public class TrashSpawner : MonoBehaviour, IInteractable
 
     IEnumerator SpawnCor()
     {
-        // transform.localScale = new Vector3(-1, 1, 1);
-        spriteRend.flipX = true;
+        anim.SetBool("Pulled", true);
         spawning = true;
+        conv.On();
         float startTime = Time.time;
         while (Time.time - startTime < spawnDuration)
         {
@@ -37,13 +39,12 @@ public class TrashSpawner : MonoBehaviour, IInteractable
             yield return new WaitForSeconds(spawnDelay);
         }
         spawning = false;
-        spriteRend.flipX = false;
-        //transform.localScale = new Vector3(1, 1, 1);
+        anim.SetBool("Pulled", false);
+        conv.Off();
     }
 
     void Spawn()
     {
-        // Pool pool = Toolbox.Instance.poolManager.foodPools[Random.Range(0, Toolbox.Instance.poolManager.foodPools.Length)];
         Pool pool = presets[activePreset].pools[Random.Range(0, presets[activePreset].pools.Length)];
         GameObject obj = pool.Activate(spawnPoint.position, spawnPoint.rotation);
         obj.GetComponent<Rigidbody2D>().velocity = Vector2.zero;

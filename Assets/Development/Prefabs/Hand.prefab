@@ -236,7 +236,7 @@ MonoBehaviour:
     m_Bits: 1024
   interactionMask:
     serializedVersion: 2
-    m_Bits: 5120
+    m_Bits: 267264
 --- !u!114 &2773896008675713242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseHp: 5
   maxHp: 10
-  shieldDuration: 2
   anim: {fileID: 2773896008346553494}
   hpBar: {fileID: 0}
+  rend: {fileID: 2773896008346553481}
   hp: 0
