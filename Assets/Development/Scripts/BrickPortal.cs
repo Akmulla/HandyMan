@@ -24,7 +24,7 @@ public class BrickPortal : MonoBehaviour
         {
             var obj = brickPool.Activate(shotSpawn.position, shotSpawn.rotation);
             //obj.GetComponent<Rigidbody2D>().AddForce(obj.transform.right*5f,ForceMode2D.Impulse);
-            yield return new WaitForSeconds(spawnCd);
+            yield return new WaitForSeconds(spawnCd+Random.Range(0f,1f));
         }
     }
 }

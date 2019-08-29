@@ -12,6 +12,7 @@ public class EddAttack : MonoBehaviour
     [SerializeField] float cdNormal;
     [SerializeField] float cdAngry;
     [SerializeField] BoxCollider2D collider;
+    [SerializeField] AudioClip attackSound;
 
     void OnEnable()
     {

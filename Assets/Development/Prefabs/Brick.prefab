@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4568989253614213558}
+  source: {fileID: 0}
+  breakSound: {fileID: 8300000, guid: 83170e44f9693ce4dba27061bc677afd, type: 3}
 --- !u!114 &7227860301454317686
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class Monster : MonoBehaviour
     [SerializeField] float timeBetweenNotifications;
     [SerializeField] GameObject popUpIcon;
     [SerializeField] AudioClip portalSound;
+    [SerializeField] AudioClip apperanceSound;
     [SerializeField] AudioClip getAngrySound;
     [SerializeField] AudioSource source;
     public bool angry { get; set; }
@@ -26,7 +27,7 @@ public class Monster : MonoBehaviour
         angry = false;
         fed = false;
         popUpIcon.SetActive(false);
-        source.clip = portalSound;
+        //source.clip = portalSound;
         source.PlayDelayed(1.0f);
         StopAllCoroutines();
         StartCoroutine(AskingCor());
@@ -47,7 +48,7 @@ public class Monster : MonoBehaviour
                     anim.SetBool("Angry", true);
                     if (getAngrySound!=null)
                     {
-                        source.PlayOneShot(getAngrySound);
+                        source.PlayOneShot(getAngrySound,0.5f);
                     }
                 }
             }
@@ -98,13 +99,30 @@ public class Monster : MonoBehaviour
 
     void CorrectFoodReaction()
     {
-        Toolbox.Instance.progressBar.AddProgress(10);
+        Toolbox.Instance.progressBar.AddProgress(20);
         StopAllCoroutines();
         appearAnim.SetBool("Finish", true);
+        popUpIcon.SetActive(false);
     }
 
     void WrongFoodReaction()
     {
         
+    }
+
+    public void PlayPortalSound()
+    {
+        if (portalSound!=null)
+        {
+            source.PlayOneShot(portalSound);
+        }
+    }
+
+    public void PlayAppearanceSound()
+    {
+        if (apperanceSound != null)
+        {
+            source.PlayOneShot(apperanceSound);
+        }
     }
 }

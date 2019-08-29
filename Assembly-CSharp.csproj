@@ -102,6 +102,7 @@
     <Compile Include="Assets\Development\Scripts\Support\PoolRef.cs" />
     <Compile Include="Assets\Development\Scripts\Support\Toolbox.cs" />
     <Compile Include="Assets\Development\Scripts\UI\Progress.cs" />
+    <Compile Include="Assets\Wire.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/d4n73/UnityProj/HandyMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

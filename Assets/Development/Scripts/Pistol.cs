@@ -10,6 +10,8 @@ public class Pistol : MonoBehaviour
     public Transform pistol;
     public float spawnCd;
     public float startDelay;
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip[] shootSounds;
 
     void OnEnable()
     {
@@ -26,8 +28,9 @@ public class Pistol : MonoBehaviour
             MathfFunc.RotateToPoint(Toolbox.Instance.head.transform.position, pistol);
             if (Time.time > lastAttackTime+spawnCd)
             {
+                source.PlayOneShot(shootSounds[Random.Range(0,shootSounds.Length)]);
                 var obj = bulletPool.Activate(shotSpawn.position, shotSpawn.rotation);
-                yield return new WaitForSeconds(spawnCd);
+                yield return new WaitForSeconds(spawnCd+Random.Range(0f,1f));
             }
             else
             {

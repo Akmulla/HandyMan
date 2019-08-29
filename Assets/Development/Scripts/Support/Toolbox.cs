@@ -14,6 +14,7 @@ public class Toolbox : MonoBehaviour
     public Progress progressBar;
     public Head head;
     public GameController gameController;
+    public AudioSource audioSource;
 
     void Awake()
     {

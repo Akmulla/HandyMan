@@ -10,12 +10,14 @@ public class GameController : MonoBehaviour
    
     void Start()
     {
+        Cursor.visible = false;
         Time.timeScale = 1f;
     }
 
     public void GameOver()
     {
         Time.timeScale = 0f;
+        Cursor.visible = true;
         gameOverWindow.SetActive(true);
     }
 
